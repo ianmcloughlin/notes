@@ -1,0 +1,24 @@
+\documentclass{iansnotes}
+
+\title{Boolean Logic Gates}
+\author{ian.mcloughlin@atu.ie}
+\date{Last updated: \today}
+
+\begin{document}
+ 
+\maketitle
+
+\section{Integers}
+
+
+
+\begin{circuitikz}
+  \draw
+    (0,2) node[and port] (myand1) {}
+    (0,0) node[and port] (myand2) {}
+    (2,1) node[xnor port] (myxnor) {}
+    (myand1.out) -- (myxnor.in 1)
+    (myand2.out) -- (myxnor.in 2);
+\end{circuitikz}
+
+\end{document}  
