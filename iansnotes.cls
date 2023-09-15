@@ -135,6 +135,3 @@
   \nobibliography{bibliography}
   \bibliographystyle{plainnat}
 }
-
-% Margin citations.
-\newcommand{\marcite}[1]{\marginnote{\bibentry{#1}}}

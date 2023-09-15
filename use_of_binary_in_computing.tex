@@ -25,21 +25,22 @@ System.out.println(Integer.toBinaryString(y));
 // 1000010100000100000000000000000 
 \end{minted}
 
-\marcite{oraclefloatingpoint}
-
-\marcite{sanglardfloatingpoint}
+\marginnote[-50mm]{\bibentry{oraclefloatingpoint}}
+\marginnote[-30mm]{\bibentry{sanglardfloatingpoint}}
 
 \section{Integer Addition}
-
+\begin{table}
 \begin{tabular}{rrrr}
     & 55 &   &  110111 \\
   + & 33 &   &  100001 \\
   \midrule
     & 88 &   & 1011000 \\
 \end{tabular}
+\end{table}
+
 
 \section{Integer Multiply by Two}
-
+\begin{table}
 \begin{tabular}{rrrrr}
            &  55 & &   &  110111 \\
   $\times$ &   2 & &   &      10 \\
@@ -49,11 +50,11 @@ System.out.println(Integer.toBinaryString(y));
   \midrule
            & 110 & &   & 1101110 \\
 \end{tabular}
+\end{table}
+
 
 \section{Nanometers}
-\marcite{ibm2nm}
-\includegraphics[width=24mm]{img/ibm2nm.png}
-
+\begin{table}
 \begin{tabular}{rlr}
   \toprule
   nm & Nanometre                & 0.000000001 metres \\
@@ -62,25 +63,39 @@ System.out.println(Integer.toBinaryString(y));
      & Atomic Radius of Silicon & 111pm              \\
   \bottomrule
 \end{tabular}
+\end{table}
 
+\begin{marginfigure}[-30mm]
+  \centering
+  \includegraphics[width=24mm]{img/ibm2nm.png}
+\end{marginfigure}
+\marginnote{\bibentry{ibm2nm}}
 
 \section{From Physical to Logical}
 
 \begin{circuitikz}
   \draw
-    (4,4) node[npn] {}
-    (4,6) node[npn] {}
-    (2,4) node[resistorshape] {}
-    (2,6) node[resistorshape] {}
-    (4,2) node[resistorshape,rotate=90] {}
-    (1,4) node[nosshape] {}
-    (1,6) node[nosshape] {}
-    (0,4) node[vee, rotate=90] {}
-    (0,6) node[vee, rotate=90] {}
-    (4,7) node[vee] {}
-    (4,1) node[ground]{}
-    (5,3) node[led,fill=red] {};
+    (8,8) node[left] (top5v) {5V}
+    to[short, o-]
+    +(0,-1) node[npn, anchor=C] (toptrans) {}
+    (toptrans.E) to[short]
+    +(0,-1) node[npn, anchor=C] (bottrans) {}
+    (bottrans.E) to[R=$5k\Omega$]
+    +(0,-2) node[ground] {}
+    
+    (toptrans.B)
+    to[R=$5k\Omega$]
+    +(-2, 0) node {}
+    to[normal open switch, -o]
+    +(-4,0) node[left] {5V}
+    
+    (bottrans.B)
+    to[R=$5k\Omega$]
+    +(-2, 0) node {}
+    to[normal open switch, -o]
+    +(-4,0) node[left] {5V}
+    ;
 \end{circuitikz}
-\marcite{circuitdigestandgate}
+\marginnote[-50mm]{\bibentry{circuitdigestandgate}}
 
 \end{document} 
