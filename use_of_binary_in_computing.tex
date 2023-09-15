@@ -73,29 +73,52 @@ System.out.println(Integer.toBinaryString(y));
 
 \section{From Physical to Logical}
 
-\begin{circuitikz}
+\begin{circuitikz}[scale=0.8, framed]
+  \ctikzset{resistors/scale=0.4, font=\scriptsize};
   \draw
-    (8,8) node[left] (top5v) {5V}
-    to[short, o-]
-    +(0,-1) node[npn, anchor=C] (toptrans) {}
+    (0,0) node[left] (top5v) {5V}
+    to[short, o-, i=$ $]
+    ++(1,0) coordinate(T)
+    to[short]
+    ++(0,-1) node[npn, anchor=C] (toptrans) {}
     (toptrans.E) to[short]
-    +(0,-1) node[npn, anchor=C] (bottrans) {}
-    (bottrans.E) to[R=$5k\Omega$]
-    +(0,-2) node[ground] {}
+    ++(0,-1) node[npn, anchor=C] (bottrans) {}
+    (bottrans.E)
+    to[short, i=$ $]
+    ++(0,-1) coordinate(X)
+    to[R=$5k\Omega$, i=$ $]
+    ++(0,-3) node[ground] {}
     
     (toptrans.B)
-    to[R=$5k\Omega$]
-    +(-2, 0) node {}
-    to[normal open switch, -o]
-    +(-4,0) node[left] {5V}
+    to[R=$10k\Omega$, i<=$ $]
+    ++(-3, 0) node[cuteopenswitchshape,anchor=1] (s1) {}
+    (s1.in)
+    to[short, -o, i<=$ $]
+    ++(-1,0) node[left] {5V}
     
     (bottrans.B)
-    to[R=$5k\Omega$]
-    +(-2, 0) node {}
-    to[normal open switch, -o]
-    +(-4,0) node[left] {5V}
+    to[R=$10k\Omega$, i<=$ $]
+    ++(-3, 0) node[cuteopenswitchshape,anchor=1] (s2) {}
+    (s2.in)
+    to[short, -o, i<=$ $]
+    ++(-1,0) node[left] {5V}
+    
+    (X)
+    to[leD, *-, fill=red, i=$ $]
+    ++(4,0) node {}
+    to[short, i=$ $]
+    ++(0,-3) node[ground] {}
     ;
 \end{circuitikz}
+
 \marginnote[-50mm]{\bibentry{circuitdigestandgate}}
+
+\vspace{8mm}
+
+\begin{circuitikz}[scale=0.8, framed]
+  \ctikzset{font=\scriptsize};
+  \draw (0,0) node[and port] {AND};
+\end{circuitikz}
+
 
 \end{document} 
