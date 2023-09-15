@@ -36,26 +36,66 @@
 \begin{figure}
 \begin{circuitikz}
   \draw
-    (0,0) to[short, o-]
-    ++(0.5,0) coordinate(X1)
-    to[short]
-    ++(0.5,0) node[nand port, anchor=in 1] (A) {}
-    
-    (X1)
-    to[short, *-]
-    (A.in 2)
-    
-    (0,-2) to[short, o-]
-    ++(0.5,0) coordinate(X2)
-    to[short]
-    ++(0.5,0) node[nand port, anchor=in 1] (B) {}
-    
-    (X2)
-    to[short, *-]
-    (B.in 2)
-    
-    (4,-1) node[nand port, anchor=in 1] (C) {};
+    (0,2) node[nand port] (A) {}
+    (0,0) node[nand port] (B) {}
+    (2,1) node[nand port] (C) {};
+
+  \draw
+    (A.left) ++(-1,0) coordinate(F1)
+             ++(-1,0) coordinate(X1)
+             node[left] {$x_1$}
+    (B.left) ++(-1,0) coordinate(F2)
+             ++(-1,0) coordinate(X2)
+             node[left] {$x_2$}
+    (C.out)  ++(1,0) coordinate(OR)
+             node[right] {$(x_1 \lor x_2)$};
   
+  \draw
+    (X1) to[short, o-] (F1)
+    (F1) to[short, *-] (A.in 1)
+    (F1) to[short, *-] (A.in 2)
+    (X2) to[short, o-] (F2)
+    (F2) to[short, *-] (B.in 1)
+    (F2) to[short, *-] (B.in 2)
+    (A.out) to[short] (C.in 1)
+    (B.out) to[short] (C.in 2)
+    (C.out) to[short, -o] (OR);
 \end{circuitikz}
 \end{figure}
+\vspace{6mm}
+\begin{tabular}{cc|ccc|c}
+  $x_1$ & $x_2$ & $x_1 \bar{\land} x_1$  & $x_2 \bar{\land} x_2$ & $\bar{\land}$ & $x_1 \lor x_2$ \\
+  \midrule
+  0 & 0 & 1 & 1 & 0 & 0 \\
+  0 & 1 & 1 & 0 & 1 & 1 \\
+  1 & 0 & 0 & 1 & 1 & 1 \\
+  1 & 1 & 0 & 0 & 1 & 1 \\
+\end{tabular}
+
+\section{All Possible One-Bit Gates}
+
+$g_i : \{0,1\} \rightarrow \{0,1\}$
+\vspace{4mm}
+
+\begin{tabular}{c|cccc}
+  $x$ & $g_0$ & $g_1$ & $g_2$ & $g_3$ \\
+  \midrule
+  0 & 0 & 0 & 1 & 1 \\
+  1 & 0 & 1 & 0 & 1 \\
+\end{tabular}
+
+\section{All Possible Two-Bit Gates}
+
+$g_i : \{0,1\}^2 \rightarrow \{0,1\}$
+\vspace{4mm}
+
+\begin{tabular}{cc|cccccccccccccccc}
+  $x_1$ & $x_2$ & $g_0$ & $g_1$ & $g_2$ & $g_3$ & $g_4$ & $g_5$ & $g_6$ & $g_7$ & $g_8$ & $g_9$ & $g_a$ & $g_b$ & $g_c$ & $g_d$ & $g_e$ & $g_f$ \\
+  \midrule
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 \\
+  0 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+  1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 1 \\
+  1 & 1 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1 & 0 & 1 \\
+\end{tabular}
+
 \end{document}  
