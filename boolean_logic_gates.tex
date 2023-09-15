@@ -8,17 +8,54 @@
  
 \maketitle
 
-\section{Integers}
+\section{Gates}
+\begin{figure}
+\begin{circuitikz}
+  \ctikzset{font=\scriptsize};
+  \draw   (0,0)   node[and port]  {and}
+        ++(2,0)   node[or port]   {or}
+        ++(2,0)   node[xor port]  {xor}
+        ++(2,0)   node[nand port] {nand}
+        ++(1.5,0) node[not port]  {not};
+\end{circuitikz}
+\end{figure}
 
+\section{Tables}
+\begin{table}
+\begin{tabular}{cc|ccccc}
+  $x_1$ & $x_2$ & $\land$ & $\lor$ & $\oplus$ & $\bar{\land}$ & $\bar{x_1}$ \\
+  \midrule
+  0 & 0 & 0 & 0 & 0 & 1 & 1 \\
+  0 & 1 & 0 & 1 & 1 & 1 & 1 \\
+  1 & 0 & 0 & 1 & 1 & 1 & 0 \\
+  1 & 1 & 1 & 1 & 0 & 0 & 0 \\
+\end{tabular}
+\end{table}
 
-
+\section{Universal nand}
+\begin{figure}
 \begin{circuitikz}
   \draw
-    (0,2) node[and port] (myand1) {}
-    (0,0) node[and port] (myand2) {}
-    (2,1) node[xnor port] (myxnor) {}
-    (myand1.out) -- (myxnor.in 1)
-    (myand2.out) -- (myxnor.in 2);
+    (0,0) to[short, o-]
+    ++(0.5,0) coordinate(X1)
+    to[short]
+    ++(0.5,0) node[nand port, anchor=in 1] (A) {}
+    
+    (X1)
+    to[short, *-]
+    (A.in 2)
+    
+    (0,-2) to[short, o-]
+    ++(0.5,0) coordinate(X2)
+    to[short]
+    ++(0.5,0) node[nand port, anchor=in 1] (B) {}
+    
+    (X2)
+    to[short, *-]
+    (B.in 2)
+    
+    (4,-1) node[nand port, anchor=in 1] (C) {};
+  
 \end{circuitikz}
-
+\end{figure}
 \end{document}  
