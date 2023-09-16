@@ -93,6 +93,8 @@
 \usetikzlibrary{graphs.standard}
 % Calculations in TikZ.
 \usetikzlibrary{calc}
+% Wavy lines.
+\usetikzlibrary{decorations.pathmorphing}
   
 % PGF plots version.
 \pgfplotsset{compat=1.18}

@@ -1,0 +1,52 @@
+\documentclass{iansnotes}
+
+\title{Electrons and Photons}
+\author{ian.mcloughlin@atu.ie}
+\date{Last updated: \today}
+
+\begin{document}
+ 
+\maketitle
+
+\section{Dividing Gold}
+
+\begin{figure}
+\begin{tikzpicture}
+  \node[inner sep=0pt] (f)  at (0, 0) {\includegraphics[width=40mm]{img/goldbar.png}};
+  \node[inner sep=0pt] (h1) at (6, 2) {\includegraphics[width=20mm]{img/goldbar.png}};
+  \node[inner sep=0pt] (h2) at (6,-2) {\includegraphics[width=20mm]{img/goldbar.png}};
+  \node[inner sep=0pt] (q1) at (10, 3) {\includegraphics[width=10mm]{img/goldbar.png}};
+  \node[inner sep=0pt] (q2) at (10, 1) {\includegraphics[width=10mm]{img/goldbar.png}};
+  \node[inner sep=0pt] (q3) at (10,-1) {\includegraphics[width=10mm]{img/goldbar.png}};
+  \node[inner sep=0pt] (q4) at (10,-3) {\includegraphics[width=10mm]{img/goldbar.png}};
+  
+  \draw[->,thick]  (f.east) -- node[above] {$\frac{1}{2}$} (h1.west);
+  \draw[->,thick]  (f.east) -- node[below] {$\frac{1}{2}$} (h2.west);
+  \draw[->,thick] (h1.east) -- node[above] {$\frac{1}{4}$} (q1.west);
+  \draw[->,thick] (h1.east) -- node[below] {$\frac{1}{4}$} (q2.west);
+  \draw[->,thick] (h2.east) -- node[above] {$\frac{1}{4}$} (q3.west);
+  \draw[->,thick] (h2.east) -- node[below] {$\frac{1}{4}$} (q4.west);
+\end{tikzpicture}
+\end{figure}
+
+\section{Photoelectric Effect}
+
+\begin{figure}
+\begin{tikzpicture}[
+  photon/.style={->,decorate,decoration={snake,post length=1mm}},
+  electron/.style={->,thick},
+  lightbulb/.style={decorate,decoration={expanding waves,angle=35}}
+]
+  \draw[lightbulb] (-0.5,5) node[circle,draw=black] {}  -- (1,2.5);
+  \draw[thick, draw=black] (0,0) rectangle ++(5,-0.3) ;
+
+  \draw[photon]   (0,2) -- (2,0);
+  \draw[electron] (2.1,0.1) -- (4,2);
+  \draw[photon]   (1,2) -- (3,0);
+  \draw[electron] (3.1,0.1) -- (5,2);
+  \draw[photon]   (2,2) -- (4,0);
+  \draw[electron] (4.1,0.1) -- (6,2);
+\end{tikzpicture}
+\end{figure}
+
+\end{document}
