@@ -33,7 +33,7 @@
 
 \begin{figure}
   \begin{circuitikz}[
-    lightbulb/.style={draw=gray!50,decorate,decoration={expanding waves,angle=10}}
+    lightbulb/.style={draw=gray!50,decorate,decoration={expanding waves,angle=20}}
   ]
   \ctikzset{tubes/height=3,tubes/width=0.7}
   \draw (4,2) node[diodetube,rotate=-90] (vacc) {};
@@ -52,17 +52,17 @@
     (0,2)
     to[short]
     (0,0);
-  \draw[lightbulb] (5,3) node[circle,draw=gray!50] {}  -- (vacc.tube bottom center);
+  \draw[lightbulb] (5,3) node[circle,fill=violet,draw=gray!50] {}  -- (vacc.tube bottom center);
   \end{circuitikz}
 \end{figure}
 
 \begin{figure}
 \begin{tikzpicture}[
   photon/.style={->,decorate,decoration={snake,post length=1mm}},
-  electron/.style={->,thick},
+  electron/.style={-latex,thick},
   lightbulb/.style={draw=gray!50,decorate,decoration={expanding waves,angle=55}}
 ]
-  \draw[lightbulb] (0,0) node[circle,draw=gray!50] {}  -- (2,-5.5);
+  \draw[lightbulb] (0.3,0) node[circle,fill=violet,draw=gray!50] {}  -- (1.6,-5.5);
   \draw[thick] (-2.5,-4) rectangle ++(7,-0.3) ;
 
   \begin{scope}[shift={(-2,-4)}]
@@ -75,5 +75,25 @@
   \end{scope}
 \end{tikzpicture}
 \end{figure}
+
+\begin{tikzpicture}[scale=0.7,
+  transition/.style={latex-latex,line width=1.3pt,dotted,draw=black},
+  orbit/.style={draw=gray},
+  electron/.style={fill=blue},
+  nucleus/.style={fill=red}
+]
+  \draw[transition] (45:3) -- (45: 5);
+  \draw[transition] (22.5:2) -- (22.5: 5);
+  \draw[transition,-latex] (67.5:5) -- (67.5:7);
+  \draw[nucleus] (0,0) circle (0.25);
+  \draw[orbit] (0,0) circle (2);
+  \draw[orbit] (0,0) circle (3);
+  \draw[orbit] (0,0) circle (5);
+  \foreach \e in {22.5,200.5}
+    \draw[electron] (\e:2) circle (0.1);
+  \foreach \e in {0,45,90,...,315}
+    \draw[electron] (\e:3) circle (0.1);
+  \draw[electron] (67.5:5) circle (0.1);
+\end{tikzpicture}
 
 \end{document}
