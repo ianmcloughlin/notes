@@ -35,17 +35,19 @@
 \begin{tikzpicture}[
   photon/.style={->,decorate,decoration={snake,post length=1mm}},
   electron/.style={->,thick},
-  lightbulb/.style={decorate,decoration={expanding waves,angle=35}}
+  lightbulb/.style={draw=gray!50,decorate,decoration={expanding waves,angle=55}}
 ]
-  \draw[lightbulb] (-0.5,5) node[circle,draw=black] {}  -- (1,2.5);
-  \draw[thick, draw=black] (0,0) rectangle ++(5,-0.3) ;
+  \draw[lightbulb] (0,0) node[circle,draw=gray!50] {}  -- (2,-6);
+  \draw[thick] (-2.5,-4) rectangle ++(7,-0.3) ;
 
-  \draw[photon]   (0,2) -- (2,0);
-  \draw[electron] (2.1,0.1) -- (4,2);
-  \draw[photon]   (1,2) -- (3,0);
-  \draw[electron] (3.1,0.1) -- (5,2);
-  \draw[photon]   (2,2) -- (4,0);
-  \draw[electron] (4.1,0.1) -- (6,2);
+  \begin{scope}[shift={(-2,-4)}]
+    \draw[photon]   (0,2) -- (2,0);
+    \draw[electron] (2.1,0.1) -- (4,2);
+    \draw[photon]   (1,2) -- (3,0);
+    \draw[electron] (3.1,0.1) -- (5,2);
+    \draw[photon]   (2,2) -- (4,0);
+    \draw[electron] (4.1,0.1) -- (6,2);
+  \end{scope}
 \end{tikzpicture}
 \end{figure}
 
