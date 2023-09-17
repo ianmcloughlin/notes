@@ -32,12 +32,37 @@
 \section{Photoelectric Effect}
 
 \begin{figure}
+  \begin{circuitikz}[
+    lightbulb/.style={draw=gray!50,decorate,decoration={expanding waves,angle=10}}
+  ]
+  \ctikzset{tubes/height=3,tubes/width=0.7}
+  \draw (4,2) node[diodetube,rotate=-90] (vacc) {};
+  \draw
+    (0,0)
+    to[battery,invert]
+    (8,0)
+    to[ammeter]
+    (8,2)
+    to[short]
+    (vacc.anode)
+    (vacc.cathode)
+    to[short]
+    (1,2)
+    to[short]
+    (0,2)
+    to[short]
+    (0,0);
+  \draw[lightbulb] (5,3) node[circle,draw=gray!50] {}  -- (vacc.tube bottom center);
+  \end{circuitikz}
+\end{figure}
+
+\begin{figure}
 \begin{tikzpicture}[
   photon/.style={->,decorate,decoration={snake,post length=1mm}},
   electron/.style={->,thick},
   lightbulb/.style={draw=gray!50,decorate,decoration={expanding waves,angle=55}}
 ]
-  \draw[lightbulb] (0,0) node[circle,draw=gray!50] {}  -- (2,-6);
+  \draw[lightbulb] (0,0) node[circle,draw=gray!50] {}  -- (2,-5.5);
   \draw[thick] (-2.5,-4) rectangle ++(7,-0.3) ;
 
   \begin{scope}[shift={(-2,-4)}]
