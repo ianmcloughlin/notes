@@ -1,0 +1,76 @@
+\documentclass{iansnotes}
+
+\title{Latin Squares}
+\author{ian.mcloughlin@atu.ie}
+\date{Last updated: \today}
+
+\begin{document}
+ 
+\maketitle
+
+\section{Finite Sets}
+$S = \{a,b,c\}$ \\[3mm]
+$|S| = 3$ \\[3mm]
+$[n] = \{0, 1, 2, \ldots, n-1\}$ \\[3mm]
+$|[n]| = n$ \\[3mm]
+
+
+\section{Latin Square}
+
+$L = \{ (i,j,k) \} \subset [n]^3$ \\
+such that \\
+$\forall x \in [n]: \{(y,k) \; \vert \; (x,y,k) \in L\} = [n]^2$\\
+and\\
+$\forall y \in [n]: \{(x,k) \; \vert \; (x,y,k) \in L\} = [n]^2.$
+
+\marginnote[-40mm]{\bibentry{mathworldlatinsquare}}
+
+\begin{marginfigure}[-30mm]
+  \centering 
+\begin{tikzpicture}
+  \matrix [matrix of math nodes, draw=black] {
+    1 & 2 \\
+    2 & 1 \\
+  };
+\end{tikzpicture}
+\caption{Latin Square, order 2.}
+\end{marginfigure}
+
+\begin{marginfigure}
+\centering
+\begin{tikzpicture}
+  \matrix [matrix of math nodes, draw=black] {
+    1 & 2 & 3 \\
+    2 & 3 & 1 \\
+    3 & 1 & 2 \\
+  };
+\end{tikzpicture}
+\caption{Latin Square, order 3.}
+\end{marginfigure}
+
+\begin{marginfigure}[10mm]
+  \centering
+  \begin{tikzpicture}
+    \matrix [matrix of math nodes, draw=black] {
+      2 & 1 & 3 \\
+      1 & 3 & 2 \\
+      3 & 2 & 1 \\
+    };
+  \end{tikzpicture}
+  \caption{Latin Square, order 3.}
+  \end{marginfigure}
+
+\begin{marginfigure}[10mm]
+  \centering
+  \begin{tikzpicture}
+    \matrix [matrix of math nodes, draw=black] {
+      1 & 2 & 3 & 4 \\
+      2 & 3 & 4 & 1 \\
+      3 & 4 & 1 & 2 \\
+      4 & 1 & 2 & 3 \\
+    };
+  \end{tikzpicture}
+  \caption{Latin Square, order 4.}
+  \end{marginfigure}
+
+\end{document}

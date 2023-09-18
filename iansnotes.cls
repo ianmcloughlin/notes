@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{iansnotes}[2023/08/18 Ian's notes class.]
+\ProvidesClass{iansnotes}[2023/09/18 Ian's notes class.]
 
 % Based on Tufte handout class.
 \LoadClass[a4paper]{tufte-handout}
@@ -61,6 +61,10 @@
 \usepackage{circuitikz}
 % Single use bibliography entries.
 \usepackage{bibentry}
+% Unnumbered captions.
+\usepackage{caption}
+% Quantum brackets.
+\usepackage{braket}
 
 % Various tikz libraries.
 % For drawing mind maps.
@@ -95,6 +99,8 @@
 \usetikzlibrary{calc}
 % Wavy lines.
 \usetikzlibrary{decorations.pathmorphing}
+% Matrices.
+\usetikzlibrary{matrix}
   
 % PGF plots version.
 \pgfplotsset{compat=1.18}

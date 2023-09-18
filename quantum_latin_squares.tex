@@ -1,0 +1,40 @@
+\documentclass{iansnotes}
+
+\title{Quantum Latin Squares}
+\author{ian.mcloughlin@atu.ie}
+\date{Last updated: \today}
+
+\begin{document}
+ 
+\maketitle
+
+\section{Quantum Latin Square}
+An $n \times n$ array of elements in $\mathbb{C}^n$ such that each row and each column is an orthonormal basis.
+\marginnote{\bibentry{musto2016quantum}}
+
+\section{Example}
+
+\begin{tikzpicture}
+  \matrix [matrix of math nodes, nodes={draw,minimum width=29mm}] {
+    \ket{0}                               & \ket{1} & \ket{2} & \ket{3} \\
+    \frac{1}{\sqrt{2}}(\ket{1} - \ket{2}) & \frac{1}{\sqrt{5}}(i\ket{0} + 2\ket{3}) & \frac{1}{\sqrt{5}}(2\ket{0} + i\ket{3}) & \frac{1}{\sqrt{2}}(\ket{1} + \ket{2}) \\
+    \frac{1}{\sqrt{2}}(\ket{1} + \ket{2}) & \frac{1}{\sqrt{5}}(2\ket{0} + i\ket{3}) & \frac{1}{\sqrt{5}}(i\ket{0} + 2\ket{3}) & \frac{1}{\sqrt{2}}(\ket{1} - \ket{2}) \\
+    \ket{3}                               & \ket{2} & \ket{1} & \ket{0} \\
+  };
+\end{tikzpicture}
+
+\begin{marginfigure}[10mm]
+  \centering 
+\begin{tikzpicture}
+  \matrix [matrix of math nodes, draw=black] {
+    \ket{0} & \ket{1} & \ket{2} & \ket{3} \\
+    \ket{1} & \ket{2} & \ket{3} & \ket{0} \\
+    \ket{2} & \ket{3} & \ket{0} & \ket{1} \\
+    \ket{3} & \ket{0} & \ket{1} & \ket{2} \\
+  };
+\end{tikzpicture}
+\caption{From Latin Square.}
+\end{marginfigure}
+
+
+\end{document}
