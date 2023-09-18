@@ -143,3 +143,6 @@
   \nobibliography{bibliography}
   \bibliographystyle{plainnat}
 }
+
+% Allow more matrix columns.
+\setcounter{MaxMatrixCols}{16}

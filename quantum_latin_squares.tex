@@ -14,7 +14,7 @@ An $n \times n$ array of elements in $\mathbb{C}^n$ such that each row and each 
 
 \section{Example}
 
-\begin{tikzpicture}
+\begin{tikzpicture}[every node/.style={scale=0.9}]
   \matrix [matrix of math nodes, nodes={draw,minimum width=29mm}] {
     \ket{0}                               & \ket{1} & \ket{2} & \ket{3} \\
     \frac{1}{\sqrt{2}}(\ket{1} - \ket{2}) & \frac{1}{\sqrt{5}}(i\ket{0} + 2\ket{3}) & \frac{1}{\sqrt{5}}(2\ket{0} + i\ket{3}) & \frac{1}{\sqrt{2}}(\ket{1} + \ket{2}) \\
@@ -23,7 +23,7 @@ An $n \times n$ array of elements in $\mathbb{C}^n$ such that each row and each 
   };
 \end{tikzpicture}
 
-\begin{marginfigure}[10mm]
+\begin{marginfigure}
   \centering 
 \begin{tikzpicture}
   \matrix [matrix of math nodes, draw=black] {
@@ -36,5 +36,17 @@ An $n \times n$ array of elements in $\mathbb{C}^n$ such that each row and each 
 \caption{From Latin Square.}
 \end{marginfigure}
 
+\section{Normality}
 
+$\left|\frac{1}{\sqrt{2}}(\ket{1} - \ket{2})\right| = \sqrt{\left(\frac{1}{\sqrt{2}}\right)^2 + \left(\frac{-1}{\sqrt{2}}\right)^2} = 1$ \\[5mm]
+$\left|\frac{1}{\sqrt{5}}(i\ket{0} + 2\ket{3})\right| = \sqrt{\left(\frac{-i}{\sqrt{5}}\right)\left(\frac{i}{\sqrt{5}}\right) + \left(\frac{2}{\sqrt{5}}\right)^2} = \sqrt{\frac{5}{5}} = 1$ \\[5mm]
+$\left|\frac{1}{\sqrt{2}}(\ket{1} + \ket{2})\right| = \sqrt{\left(\frac{1}{\sqrt{2}}\right)^2 + \left(\frac{1}{\sqrt{2}}\right)^2} = 1$ \\[5mm]
+$\left|\frac{1}{\sqrt{5}}(2\ket{0} + i\ket{3})\right| = \sqrt{\left(\frac{2}{\sqrt{5}}\right)^2 + \left(\frac{-i}{\sqrt{5}}\right)\left(\frac{i}{\sqrt{5}}\right)} = \sqrt{\frac{5}{5}} = 1$ \\[5mm]
+
+\section{Orthogonality}
+
+$\braket{0|1} = (0)(1) + (1)(0) = 0$ \\[5mm]
+$\left(\frac{1}{\sqrt{2}}(\ket{1} - \ket{2})\right)^* \left(\frac{1}{\sqrt{5}}(i\ket{0} + 2\ket{3}) \right) = 0$ \\[5mm]
+$\left(\frac{1}{\sqrt{2}}(\ket{1} + \ket{2})\right)^* \left(\frac{1}{\sqrt{2}}(\ket{1} - \ket{2})\right) = \left(\frac{1}{\sqrt{2}}\right)\left(\frac{1}{\sqrt{2}}\right) + \left(\frac{1}{\sqrt{2}}\right)\left(\frac{-1}{\sqrt{2}}\right) =  0$ \\[5mm]
+$\frac{1}{\sqrt{5}}(i\ket{0} + 2\ket{3})^* \frac{1}{\sqrt{5}}(2\ket{0} + i\ket{3}) = \left(\frac{-i}{\sqrt{5}}\right)\left(\frac{2}{\sqrt{5}}\right) + \left(\frac{2}{\sqrt{5}}\right)\left(\frac{i}{\sqrt{5}}\right) =  0$ \\[5mm]
 \end{document}
