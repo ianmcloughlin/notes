@@ -3,7 +3,7 @@
 
 % Based on Tufte handout class.
 \LoadClass[a4paper]{tufte-handout}
-
+  
 % Change date style.
 \usepackage[UKenglish]{isodate}
 \cleanlookdateon
@@ -67,6 +67,8 @@
 \usepackage{braket}
 
 % Various tikz libraries.
+% Quantum circuits.
+\usetikzlibrary{quantikz2}
 % For drawing mind maps.
 \usetikzlibrary{mindmap}
 % For adding shadows.
@@ -146,3 +148,23 @@
 
 % Allow more matrix columns.
 \setcounter{MaxMatrixCols}{16}
+
+% No indent.
+\makeatletter
+% Paragraph indentation and separation for normal text
+\renewcommand{\@tufte@reset@par}{%
+  \setlength{\RaggedRightParindent}{1.0pc}%
+  \setlength{\JustifyingParindent}{1.0pc}%
+  \setlength{\parindent}{1pc}%
+  \setlength{\parskip}{0pt}%
+}
+\@tufte@reset@par
+
+% Paragraph indentation and separation for marginal text
+\renewcommand{\@tufte@margin@par}{%
+  \setlength{\RaggedRightParindent}{0.5pc}%
+  \setlength{\JustifyingParindent}{0.5pc}%
+  \setlength{\parindent}{0.5pc}%
+  \setlength{\parskip}{0pt}%
+}
+\makeatother

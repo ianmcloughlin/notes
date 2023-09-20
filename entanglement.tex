@@ -1,0 +1,74 @@
+\documentclass{iansnotes}
+
+\title{Entanglement}
+\author{ian.mcloughlin@atu.ie}
+\date{Last updated: \today}
+
+\begin{document}
+ 
+\maketitle 
+
+\section{Entangled Qubits}
+\marginnote{\bibentry{qiskitentanglement}}
+\begin{quantikz}
+  \lstick{$\ket{0}$} & \gate{\mathsf{H}} & \ctrl{1} & \\
+  \lstick{$\ket{0}$} &                   & \targ{}  & \\
+\end{quantikz}
+
+\subsection{Matrices}
+$\ket{0} \otimes \ket{0} = \ket{00} \rightarrow \begin{bmatrix} 1 \\ 0 \\ 0 \\ 0 \end{bmatrix}$
+
+\subsection{$\mathsf{CNOT}$}
+$\begin{bmatrix}
+  1 & 0 & 0 & 0 \\
+  0 & 1 & 0 & 0 \\
+  0 & 0 & 0 & 1 \\
+  0 & 0 & 1 & 0 \\
+\end{bmatrix}$
+
+\subsection{$\mathsf{H}$}
+$\frac{1}{\sqrt{2}}\begin{bmatrix}
+  1 &  1 \\
+  1 & -1 \\
+\end{bmatrix}$
+
+\subsection{$\mathsf{H} \otimes \mathsf{I}$}
+$\frac{1}{\sqrt{2}}\begin{bmatrix}
+  1 & 0 &  1 &  0 \\
+  0 & 1 &  0 &  1 \\
+  1 & 0 & -1 &  0 \\
+  0 & 1 &  0 & -1 \\
+\end{bmatrix}$
+
+\subsection{$\mathsf{CNOT}(\mathsf{H} \otimes \mathsf{I})$}
+$\frac{1}{\sqrt{2}}\begin{bmatrix}
+  1 & 0 & 0 & 0 \\
+  0 & 1 & 0 & 0 \\
+  0 & 0 & 0 & 1 \\
+  0 & 0 & 1 & 0 \\
+\end{bmatrix}\begin{bmatrix}
+  1 & 0 &  1 &  0 \\
+  0 & 1 &  0 &  1 \\
+  1 & 0 & -1 &  0 \\
+  0 & 1 &  0 & -1 \\
+\end{bmatrix}=\frac{1}{\sqrt{2}}\begin{bmatrix}
+  1 & 0 &  1 &  0 \\
+  0 & 1 &  0 &  1 \\
+  0 & 1 &  0 & -1 \\
+  1 & 0 & -1 &  0 \\
+\end{bmatrix}$
+
+\subsection{$\mathsf{CNOT}(\mathsf{H} \otimes \mathsf{I}) \ket{00}$}
+$\frac{1}{\sqrt{2}}\begin{bmatrix}
+  1 & 0 &  1 &  0 \\
+  0 & 1 &  0 &  1 \\
+  0 & 1 &  0 & -1 \\
+  1 & 0 & -1 &  0 \\
+\end{bmatrix}
+\begin{bmatrix} 1 \\ 0 \\ 0 \\ 0 \end{bmatrix} = \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \\ 0 \\ 0 \\ 1 \end{bmatrix} $
+
+\subsection{Entangled}
+$\begin{bmatrix} 1 \\ 0 \\ 0 \\ 1 \end{bmatrix} \rightarrow \frac{1}{\sqrt{2}} \ket{00} + \frac{1}{\sqrt{2}} \ket{11} \neq \ket{a} \otimes \ket{b}$
+
+
+\end{document}
