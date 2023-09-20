@@ -1,0 +1,42 @@
+\documentclass{iansnotes}
+
+\title{Hadamard Gate}
+\author{ian.mcloughlin@atu.ie}
+\date{Last updated: \today}
+
+\begin{document}
+ 
+\maketitle 
+
+\section{Gate}
+\marginnote{\bibentry{ibmqiskitsinglesystems}}
+\begin{quantikz}
+   & \gate{\mathsf{H}} & \\
+\end{quantikz}
+
+\subsection{Matrix}
+$\mathsf{H} = \frac{1}{\sqrt{2}}\begin{bmatrix}
+  1 &  1 \\
+  1 & -1 \\
+\end{bmatrix}$ \\[4mm]
+$\ket{\phi} = \begin{bmatrix} \alpha \\ \beta \end{bmatrix}$ \\[4mm]
+$\ket{\phi_H}\mathsf{H} \ket{\phi} = 
+\frac{1}{\sqrt{2}}\begin{bmatrix}
+  1 &  1 \\
+  1 & -1 \\
+\end{bmatrix}\begin{bmatrix} \alpha \\ \beta \end{bmatrix} = \frac{1}{\sqrt{2}}\begin{bmatrix} \alpha + \beta \\ \alpha - \beta \end{bmatrix}$
+
+\subsection{Probability}
+$\bra{\phi_H} = \frac{1}{\sqrt{2}}\begin{bmatrix} (\alpha + \beta)^* & (\alpha - \beta)^*\end{bmatrix} = \frac{1}{\sqrt{2}}\begin{bmatrix} \alpha^* + \beta^* & \alpha^* - \beta^*\end{bmatrix}$ \\[4mm]
+\begin{flalign*}
+  \braket{\phi_H | \phi_H} &= \left(\frac{1}{\sqrt{2}}\right)\left(\frac{1}{\sqrt{2}}\right)\begin{bmatrix} \alpha^* + \beta^* & \alpha^* - \beta^*\end{bmatrix} \begin{bmatrix} \alpha + \beta \\ \alpha - \beta \end{bmatrix} \\
+  &= \frac{1}{2}\left[(\alpha^* + \beta^*)(\alpha + \beta) + (\alpha^* - \beta^*)(\alpha - \beta )\right] \\
+  &= \frac{1}{2}\left[\alpha^*\alpha + \beta^*\alpha + \alpha^*\beta + \beta^*\beta + \alpha^*\alpha - \beta^*\alpha - \alpha^*\beta + \beta^*\beta\right] \\
+  &= \frac{1}{2}\left[2 \alpha^*\alpha + 2 \beta^*\beta\right]\\
+  &= \alpha^*\alpha + \beta^*\beta\\
+\end{flalign*}
+$\braket{\phi|\phi} = \begin{bmatrix} \alpha^* & \beta^* \end{bmatrix} \begin{bmatrix} \alpha \\ \beta \end{bmatrix} = \alpha^*\alpha + \beta^*\beta = 1$ \\[4mm]
+
+
+
+\end{document}

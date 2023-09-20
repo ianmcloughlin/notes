@@ -14,7 +14,7 @@
 % Bera Mono.
 \usepackage{beramono}
 % More math layouts, equation arrays, etc.
-\usepackage{amsmath}
+\usepackage[fleqn]{amsmath}
 % Enables the use of colour.
 \usepackage{xcolor}
 % Syntax high-lighting for code. Requires Python's pygments.
