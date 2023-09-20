@@ -8,67 +8,13 @@
  
 \maketitle 
 
-\section{Entangled Qubits}
+\section{Circuit}
 \marginnote{\bibentry{qiskitentanglement}}
 \begin{quantikz}
-  \lstick{$\ket{0}$} & \ctrl{1} & \gate{\mathsf{H}} & \\
-  \lstick{$\ket{0}$} & \targ{} & & \\
+  \lstick{$\ket{\psi}$}      &                                   & \ctrl{1} & \gate{\mathsf{H}} & \meter{} & \setwiretype{c} &                   & \ctrl{2}  \\
+  \lstick[2]{$\ket{\phi^+}$} & \wire[l][1]["Alice"{above}]{a} & \targ{}  &                   & \meter{} & \setwiretype{c} & \ctrl{1}          \\
+                             & \wire[l][1]["Bob"{above}]{a} &          &                   &          &                 & \gate{\mathsf{X}} & \gate{\mathsf{Z}} & \rstick{$\ket{\psi}$} \\
 \end{quantikz}
-
-\subsection{Matrices}
-$\ket{0} \otimes \ket{0} = \ket{00} \rightarrow \begin{bmatrix} 1 \\ 0 \\ 0 \\ 0 \end{bmatrix}$
-
-\subsection{$\mathsf{CNOT}$}
-$\begin{bmatrix}
-  1 & 0 & 0 & 0 \\
-  0 & 1 & 0 & 0 \\
-  0 & 0 & 0 & 1 \\
-  0 & 0 & 1 & 0 \\
-\end{bmatrix}$
-
-\subsection{$\mathsf{H}$}
-$\frac{1}{\sqrt{2}}\begin{bmatrix}
-  1 &  1 \\
-  1 & -1 \\
-\end{bmatrix}$
-
-\subsection{$\mathsf{H} \otimes \mathsf{I}$}
-$\frac{1}{\sqrt{2}}\begin{bmatrix}
-  1 & 0 &  1 &  0 \\
-  0 & 1 &  0 &  1 \\
-  1 & 0 & -1 &  0 \\
-  0 & 1 &  0 & -1 \\
-\end{bmatrix}$
-
-\subsection{$\mathsf{CNOT}(\mathsf{H} \otimes \mathsf{I})$}
-$\frac{1}{\sqrt{2}}\begin{bmatrix}
-  1 & 0 & 0 & 0 \\
-  0 & 1 & 0 & 0 \\
-  0 & 0 & 0 & 1 \\
-  0 & 0 & 1 & 0 \\
-\end{bmatrix}\begin{bmatrix}
-  1 & 0 &  1 &  0 \\
-  0 & 1 &  0 &  1 \\
-  1 & 0 & -1 &  0 \\
-  0 & 1 &  0 & -1 \\
-\end{bmatrix}=\frac{1}{\sqrt{2}}\begin{bmatrix}
-  1 & 0 &  1 &  0 \\
-  0 & 1 &  0 &  1 \\
-  0 & 1 &  0 & -1 \\
-  1 & 0 & -1 &  0 \\
-\end{bmatrix}$
-
-\subsection{$\mathsf{CNOT}(\mathsf{H} \otimes \mathsf{I}) \ket{00}$}
-$\frac{1}{\sqrt{2}}\begin{bmatrix}
-  1 & 0 &  1 &  0 \\
-  0 & 1 &  0 &  1 \\
-  0 & 1 &  0 & -1 \\
-  1 & 0 & -1 &  0 \\
-\end{bmatrix}
-\begin{bmatrix} 1 \\ 0 \\ 0 \\ 0 \end{bmatrix} = \frac{1}{\sqrt{2}}\begin{bmatrix} 1 \\ 0 \\ 0 \\ 1 \end{bmatrix} $
-
-\subsection{Entangled}
-$\begin{bmatrix} 1 \\ 0 \\ 0 \\ 1 \end{bmatrix} \rightarrow \frac{1}{\sqrt{2}} \ket{00} + \frac{1}{\sqrt{2}} \ket{11} \neq \ket{a} \otimes \ket{b}$
 
 
 \end{document}
