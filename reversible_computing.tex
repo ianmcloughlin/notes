@@ -1,0 +1,85 @@
+\documentclass{iansnotes}
+
+\title{Reversible Computing}
+\author{ian.mcloughlin@atu.ie}
+\date{Last updated: \today}
+
+\begin{document}
+ 
+\maketitle
+
+\section{Logical Reversibility}
+
+\begin{circuitikz}
+  \ctikzset{font=\scriptsize};
+  \draw   (0,0)   node[and port]  {and};
+\end{circuitikz}
+\begin{table}
+\begin{tabular}{cc|c}
+  $x_1$ & $x_2$ & $\land$ \\
+  \midrule
+  0 & 0 & 0 \\
+  0 & 1 & 0 \\
+  1 & 0 & 0 \\
+  1 & 1 & 1 \\
+\end{tabular}
+\end{table}\\[6mm]
+\begin{circuitikz}
+  \ctikzset{font=\scriptsize};
+  \draw   (0,0)   node[not port]  {not};
+\end{circuitikz}
+\begin{table}
+\begin{tabular}{c|c}
+  $x$ & $\bar{x}$ \\
+  \midrule
+  0 & 1 \\
+  1 & 0 \\
+\end{tabular}
+\end{table}
+
+\section{Landauer's Principle}
+\marginnote[-10mm]{\bibentry{landauer61}}
+\marginnote[10mm]{\bibentry{bennett82}}
+\marginnote[10mm]{\bibentry{bennett2003notes}}
+$\Delta E \geq kT \ln 2$ \\[4mm]
+$k = 1.380649 \times 10^{-23} \textsf{JK}^{-1}$ \\[4mm]
+$\Delta E \geq (1.380649 \times 10^{-23}) (293) (0.693147) \approx 2.8 \times 10^{-21}\textsf{J} \textrm{ at } 20^{\circ} \textsf{C}$\footnote{Somewhere in th}
+
+\section{$\textsf{XOR}$}
+\begin{circuitikz}
+  \ctikzset{font=\scriptsize};
+  \draw   (0,0)   node[xor port]  {xor};
+\end{circuitikz}
+\begin{table}
+\begin{tabular}{cc|ccccc}
+  $x_1$ & $x_2$ & $\land$ \\
+  \midrule
+  0 & 0 & 0 \\
+  0 & 1 & 1 \\
+  1 & 0 & 1 \\
+  1 & 1 & 0 \\
+\end{tabular}
+\end{table}\\[6mm]
+
+\section{$\textsf{CNOT}$}
+\begin{circuitikz}
+  \ctikzset{font=\scriptsize};
+  \draw   (0,0)   node[xor port] (X)  {xor};
+  \draw (X.in 1) to ++(-0.3,0) to[short, *-] ++(0,0.8) to[short] ++(2.5,0) node[right] {$x$};
+  \draw (X.in 1) to[short] ++(-0.8,0)node[left] {$x_1$};
+  \draw (X.in 2) to[short] ++(-0.8,0) node[left] {$x_2$};
+  \draw (X.out) to[short] ++(0.6,0) node[right] {$x_1 \oplus x_2$};
+\end{circuitikz}\\[6mm]
+\begin{table}
+\begin{tabular}{cc|cc}
+  $x_1$ & $x_2$ & $x_1$ & $x_1 \oplus x_2$ \\
+  \midrule
+  0 & 0 & 0 & 0 \\
+  0 & 1 & 0 & 1 \\
+  1 & 0 & 1 & 1 \\
+  1 & 1 & 1 & 0 \\
+\end{tabular}
+\end{table}
+\marginnote[-20mm]{$x_1 \oplus x_2$ means the same as $x_1 \vee x_2$.}
+
+\end{document}

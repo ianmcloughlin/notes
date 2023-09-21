@@ -65,6 +65,8 @@
 \usepackage{caption}
 % Quantum brackets.
 \usepackage{braket}
+% SI units.
+\usepackage{siunitx}
 
 % Various tikz libraries.
 % Quantum circuits.
