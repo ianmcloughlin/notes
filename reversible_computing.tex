@@ -52,7 +52,7 @@ $\Delta E \geq (1.380649 \times 10^{-23}) (293) (0.693147) \approx 2.8 \times 10
 \end{circuitikz}
 \begin{table}
 \begin{tabular}{cc|ccccc}
-  $x_1$ & $x_2$ & $\land$ \\
+  $x_1$ & $x_2$ & $\oplus$ \\
   \midrule
   0 & 0 & 0 \\
   0 & 1 & 1 \\
@@ -80,6 +80,61 @@ $\Delta E \geq (1.380649 \times 10^{-23}) (293) (0.693147) \approx 2.8 \times 10
   1 & 1 & 1 & 0 \\
 \end{tabular}
 \end{table}
-\marginnote[-20mm]{$x_1 \oplus x_2$ means the same as $x_1 \vee x_2$.}
+
+
+\section{Toffoli}
+$y = x_3 \oplus (x_1 \land x_2)$
+\begin{table}
+  \begin{tabular}{ccc|ccc}
+    $x_1$ & $x_2$ & $x_3$ & $x_1$ & $x_2$ & $y$ \\
+    \midrule
+    0 & 0 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 1 & 0 & 0 & 1 \\
+    0 & 1 & 0 & 0 & 1 & 0 \\
+    0 & 1 & 1 & 0 & 1 & 1 \\
+    1 & 0 & 0 & 1 & 0 & 0 \\
+    1 & 0 & 1 & 1 & 0 & 1 \\
+    1 & 1 & 0 & 1 & 1 & 1 \\
+    1 & 1 & 1 & 1 & 1 & 0 \\
+  \end{tabular}
+\end{table}\\[4mm]
+\marginnote[-40mm]{$\begin{bmatrix}
+  1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 1 & 0
+\end{bmatrix}$}
+
+\section{Fredkin}
+$y_1 = x_1 \oplus (x_0 \land (x_1 \oplus x_2))$\\[2mm]
+$y_2 = x_2 \oplus (x_0 \land (x_1 \oplus x_2))$
+\begin{table}
+  \begin{tabular}{ccc|ccc}
+    $x_0$ & $x_1$ & $x_2$ & $x_0$ & $y_1$ & $y_2$ \\
+    \midrule
+    0 & 0 & 0 & 0 & 0 & 0 \\
+    0 & 0 & 1 & 0 & 0 & 1 \\
+    0 & 1 & 0 & 0 & 1 & 0 \\
+    0 & 1 & 1 & 0 & 1 & 1 \\
+    1 & 0 & 0 & 1 & 0 & 0 \\
+    1 & 0 & 1 & 1 & 1 & 0 \\
+    1 & 1 & 0 & 1 & 0 & 1 \\
+    1 & 1 & 1 & 1 & 1 & 1 \\
+  \end{tabular}
+\end{table}\\[4mm]
+\marginnote[-40mm]{$\begin{bmatrix}
+  1 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 1 & 0 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 1 & 0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 1 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
+  0 & 0 & 0 & 0 & 0 & 0 & 0 & 1
+\end{bmatrix}$}
 
 \end{document}
