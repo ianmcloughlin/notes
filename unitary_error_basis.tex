@@ -1,0 +1,104 @@
+\documentclass{iansnotes}
+
+\title{Unitary Error Basis}
+\author{ian.mcloughlin@atu.ie}
+\date{Last updated: \today}
+
+\begin{document}
+ 
+\maketitle
+
+\section{Pauli Matrices}
+
+$\begin{bmatrix}
+  1 & 0 \\
+  0 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+  0 & 1 \\
+  1 & 0 \\
+\end{bmatrix}
+\begin{bmatrix}
+  1 & 0 \\
+  0 & -1 \\
+\end{bmatrix}
+\begin{bmatrix}
+  0 & -i \\
+  i & 0 \\
+\end{bmatrix}$
+
+\section{Inner Product}
+
+$A, B$: $d \times d$ matrices.\\[2mm]
+$\langle A, B \rangle = \textsf{tr}(A^* B) / d$\\[2mm]
+$\textsf{tr}(A) = \sum_i a_{ii}$
+
+\section{Conjugate Transpose}
+
+$A^* = A^\textsf{H} = A^\dagger = \bar{A}^\textsf{T}$\\[4mm]
+$\begin{bmatrix}
+  i & 2+i \\
+  1 & 3-2i \\
+\end{bmatrix}^* = 
+\begin{bmatrix}
+  -i & 1 \\
+  2-i & 3+2i \\
+\end{bmatrix}$
+
+\section{Trace}
+$\textsf{tr}(A) = \sum_i a_{ii}$ \\[4mm]
+$\textsf{tr}(A \otimes B) = \textsf{tr}(A) \textsf{tr}(B)$\\[4mm]
+$\textsf{tr}(cA) = c\textsf{tr}(A)$\\[4mm]
+$\textsf{tr}(A) = \sum_i \lambda_i$
+
+\section{Orthogonality}
+$A = \begin{bmatrix}
+  0 & -i \\
+  i & 0 \\
+\end{bmatrix}\qquad B = \begin{bmatrix}
+  1 & 0 \\
+  0 & -1 \\
+\end{bmatrix}$ \\[4mm]
+$A^* = \begin{bmatrix}
+  0 & -i \\
+  i & 0 \\
+\end{bmatrix}$ \\[4mm]
+$A^*B = \begin{bmatrix}
+  0 & -i \\
+  i & 0 \\
+\end{bmatrix}\begin{bmatrix}
+  1 & 0 \\
+  0 & -1 \\
+\end{bmatrix}=\begin{bmatrix}
+  0 & i \\
+  i & 0 \\
+\end{bmatrix}$ \\[4mm]
+$\textsf{tr}(A^*B) = 0 + 0 = 0$ \\[2mm]
+$d = 2$ \\[2mm]
+$\textsf{tr}(A^*B)/2 = 0/2 = 0$
+
+\section{Normality}
+$A = \begin{bmatrix}
+  0 & -i \\
+  i & 0 \\
+\end{bmatrix} \qquad
+A^* = \begin{bmatrix}
+  0 & -i \\
+  i &  0 \\
+\end{bmatrix}$ \\[4mm]
+\noindent$A^* A = \begin{bmatrix}
+  0 & -i \\
+  i & 0 \\
+\end{bmatrix}\begin{bmatrix}
+  0 & -i \\
+  i & 0 \\
+\end{bmatrix}=\begin{bmatrix}
+  -i^2 &  0   \\
+  0    & -i^2 \\
+\end{bmatrix}$ \\[4mm]
+$\textsf{tr}(A^*A) = -i^2 + -i^2 = 2$ \\[2mm]
+$d = 2$ \\[2mm]
+$\textsf{tr}(A^*B)/2 = 2/2 = 1$
+
+
+\end{document}
