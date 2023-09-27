@@ -81,17 +81,20 @@
   \draw[electron] (67.5:5) circle (0.1);
   \foreach \x in {1,2,...,23}
     \draw[fill=magenta] (rand*0.3,rand*0.3) circle (0.15);
-\end{tikzpicture}
+\end{tikzpicture} \\[8mm]
 
+\noindent \includegraphics[width=50mm]{img/hydrogen_spectrum_2.jpg}
 
-\begin{marginfigure}[-90mm]
-  \includegraphics[width=50mm]{img/hydrogen_spectrum_2.jpg}
-  \caption*{Hydrogen spectrum.}
-\end{marginfigure}
+\marginnote[-55mm]{\bibentry{chemlibreh2spectrum}}
 
-\marginnote[-30mm]{\bibentry{chemlibreh2spectrum}}
+\vspace{10mm}
 
 \section{Double Slit}
+\begin{marginfigure}
+  \includegraphics[width=50mm]{img/electron_double_slit.jpg}
+  \caption*{Electrons}
+\end{marginfigure}
+
 \begin{tikzpicture}[
   lightwave/.style={draw=gray, decorate, decoration={expanding waves, angle=30, segment length=1mm}},
   lightbulb/.style={circle, fill=red}
@@ -101,10 +104,8 @@
   \draw[lightwave] (0,0) node[lightbulb] {}  -- (8,0);
 \end{tikzpicture}
 
-\begin{marginfigure}[-90mm]
-  \includegraphics[width=50mm]{img/double_single_slit.png}
-  \caption*{Single slit vs double.}
-\end{marginfigure}
+\includegraphics[width=50mm]{img/double_single_slit.png}
+
 
 
 
