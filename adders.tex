@@ -1,0 +1,108 @@
+\documentclass{iansnotes}
+
+\title{Adders}
+\author{ian.mcloughlin@atu.ie}
+\date{Last updated: \today}
+
+\begin{document}
+ 
+\maketitle
+
+\section{Half Adder}
+\begin{circuitikz}
+  \draw
+    (0,1.5) node[xor port] (A) {}
+    (0,0  ) node[and port] (B) {};
+
+  \draw
+    (A.in 1) ++(-0.5,0) coordinate(F1)
+              ++(-2.0,0) coordinate(X1)
+              node[left] {$x_1$}
+    (A.in 2) ++(-1.5,0) coordinate(F2)
+              ++(-1.0,0) coordinate(X2)
+              node[left] {$x_2$}
+    (A.out)  to[short, -*] ++(1,0) node[right] {$s$}
+    (B.out)  to[short, -*] ++(1,0) node[right] {$c$};
+  
+  \draw
+    (X1) to[short, *-] (F1)
+    (X2) to[short, *-] (F2)
+
+    (F1) to[short, *-] (F1 |- B.in 1) to[short] (B.in 1)
+    (F2) to[short, *-] (F2 |- B.in 2) to[short] (B.in 2)
+    
+    (F1) to[short, *-] (A.in 1)
+    (F2) to[short, *-] (A.in 2);
+\end{circuitikz}
+
+\marginnote[-25mm]{
+\begin{tabular}{cc|cc}
+  $x_1$ & $x_2$ & $s$ & $c$ \\
+  \midrule
+  0 & 0 & 0 & 0 \\
+  0 & 1 & 0 & 1 \\
+  1 & 0 & 0 & 1 \\
+  1 & 1 & 1 & 0 \\
+\end{tabular}}
+
+\section{Full Adder}
+\begin{circuitikz}
+  \draw
+      (0, 0  ) node[xor port] (A) {}
+    ++(3,-0.6) node[xor port] (B) {}
+    ++(0,-1.5) node[and port] (C) {}
+    ++(0,-1.5) node[and port] (D) {}
+    ++(2,0.75) node[or port]  (E) {}
+    ;
+
+  \draw
+    (A.in 1) ++(-0.25,0) coordinate(F1)
+              ++(-1.0,0) coordinate(X1)
+              node[left] {$x_1$}
+    (A.in 2) ++(-0.75,0) coordinate(F2)
+              ++(-0.5,0) coordinate(X2)
+              node[left] {$x_2$}
+    (A.out)  to[short, -*]
+    ++(0.25,0) coordinate(F3) to[short] (B.in 1);
+  
+  \draw
+    (C.out) to[short] (C.out |- E.in 1) to[short] (E.in 1)
+    (D.out) to[short] (D.out |- E.in 2) to[short] (E.in 2)
+    (E.out)  to[short, -*]
+    ++(0.1,0) coordinate(COUT) node[right] {$c_{out}$};
+  
+  \draw
+    (B.out) to[short, -*]
+    (B.out -| COUT) node[right] {$s$};
+  
+  \draw
+    (X1) to[short, *-] (F1) to[short, *-] (A.in 1)
+    (X2) to[short, *-] (F2) to[short, *-] (A.in 2)
+
+    (F1) to[short, *-] (F1 |- D.in 1) to[short] (D.in 1)
+    (F2) to[short, *-] (F2 |- D.in 2) to[short] (D.in 2);
+  
+  \draw
+    (B.in 2) to[short]
+    ++(-0.5,0) coordinate(F4) to[short, *-*]
+    (B.in 2 -| X1) node[left] {$c_{in}$};
+
+  \draw
+    (F3) to[short] (F3 |- C.in 2) to[short] (C.in 2)
+    (F4) to[short] (F4 |- C.in 1) to[short] (C.in 1);
+\end{circuitikz}
+
+\marginnote[-20mm]{\begin{tabular}{ccc|cc}
+  $x_1$ & $x_2$ & $c_{in}$ & $s$ & $c_{out}$ \\
+  \midrule
+  0 & 0 & 0 & 0 & 0 \\
+  0 & 0 & 1 & 0 & 1 \\
+  0 & 1 & 0 & 0 & 1 \\
+  0 & 1 & 1 & 1 & 0 \\
+  1 & 0 & 0 & 0 & 1 \\
+  1 & 0 & 1 & 1 & 0 \\
+  1 & 1 & 0 & 1 & 0 \\
+  1 & 1 & 1 & 1 & 1 \\
+\end{tabular}}
+
+\end{document}  
