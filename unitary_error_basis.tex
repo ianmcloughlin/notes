@@ -29,6 +29,7 @@ $\begin{bmatrix}
 
 \section{Inner Product}
 \marginnote{\bibentry{klappenecker_03}}
+\marginnote[8mm]{\bibentry{klappenecker2003monomiality}}
 $A, B$: $d \times d$ matrices.\\[2mm]
 $\langle A, B \rangle = \textsf{tr}(A^* B) / d$\\[2mm]
 $\textsf{tr}(A) = \sum_i a_{ii}$
@@ -100,6 +101,31 @@ $\textsf{tr}(A^*A) = -i^2 + -i^2 = 2$ \\[2mm]
 $d = 2$ \\[2mm]
 $\textsf{tr}(A^*B)/2 = 2/2 = 1$
 
+\section{Equivalence}
+
+\begin{description}
+  \item[Unitary matrix:] $U^* U = I$.
+  \item[$\mathcal{U}(d)$:] group of all $d \times d$ unitary matrices.
+  \item[$\mathcal{E}, \mathcal{E}'$:] $d \times d$ Unitary Error Bases.
+\end{description}
+
+$\mathcal{E} \equiv \mathcal{E}' \Leftrightarrow \exists A, B \in \mathcal{U}(d), f:\mathcal{E} \rightarrow \mathbb{C} : \mathcal{E}' = \{f(E)AEB \mid E \in \mathcal{E}\}$
+
+
+\section{Pauli Basis is Unique}
+\begin{lemma}
+  Up to equivalence, the Pauli basis is unique in dimension 2.
+\end{lemma}
+
+\begin{proof}
+  Let $\mathcal{E} = \{E_1, E_2, E_3, E_4 \}$ be a $2 \times 2$ unitary error basis.
+
+  Then $E_1^* \mathcal{E} = \{I, E_1^* E_2, E_1^* E_3, E_1^* E_4 \}$ is also a unitary error basis. 
+
+  As is $E_1^* \mathcal{E} = \{I, E_1^* E_2, E_1^* E_3, E_1^* E_4 \}$ is also a unitary error basis. 
+\end{proof}
+
+
 \section{Characterization}
 
 \begin{description}
@@ -115,6 +141,10 @@ $U = \begin{bmatrix}
 $E_0(U) = \sqrt{2} \begin{bmatrix}
   U_{0,0} & U_{0,1} \\
   U_{0,2} & U_{0,3} \\
-\end{bmatrix}$
+\end{bmatrix}$\\[4mm]
+TODO: Fix above
 
+\section{Knill}
+\marginnote{\bibentry{knill1996group}}
+\marginnote{\bibentry{Werner2000AllTA}}
 \end{document}

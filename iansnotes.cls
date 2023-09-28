@@ -170,3 +170,6 @@
   \setlength{\parskip}{0pt}%
 }
 \makeatother
+
+% Lemmas.
+\newtheorem{lemma}{Lemma}
