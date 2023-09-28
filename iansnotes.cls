@@ -70,7 +70,7 @@
 
 % Various tikz libraries.
 % Quantum circuits.
-\usetikzlibrary{quantikz2}
+%\usetikzlibrary{quantikz2}
 % For drawing mind maps.
 \usetikzlibrary{mindmap}
 % For adding shadows.

@@ -1,0 +1,36 @@
+\documentclass{iansnotes}
+
+\title{Griffith Example 1.2}
+\author{ian.mcloughlin@atu.ie}
+\date{Last updated: \today}
+
+\begin{document}
+ 
+\maketitle
+
+\section{Question}
+
+Suppose someone drops a rock off a cliff oh height $h$.
+As it falls, I snap a million photographs, as random itnervals.
+On each picture I measure the distance the rock has fallen.
+
+What is the average of all there distances?
+That is to say, what is the time average of the distance traveled?\cite{griffiths2018}
+ 
+\section{Distance Formula}
+$x(t) = \frac{1}{2} gt^2$\\[4mm]
+$g = 9.8067 \textsf{ms}^{-2}$\\[4mm]
+\begin{tikzpicture}
+  \begin{axis}[
+    axis lines = left,
+    xlabel = \(t\),
+    ylabel = {\(\frac{1}{2}gt^2\)},
+  ]
+  \addplot[
+    domain=0:100,
+    samples=1000,
+    color=gray
+  ]{0.5 * 9.8067 * x^2};
+  \end{axis}
+\end{tikzpicture}
+\end{document} 
