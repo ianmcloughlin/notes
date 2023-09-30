@@ -11,20 +11,22 @@
 \section{Question}
 
 Suppose someone drops a rock off a cliff oh height $h$.
-As it falls, I snap a million photographs, as random itnervals.
+As it falls, I snap a million photographs, as random intervals.
 On each picture I measure the distance the rock has fallen.
 
 What is the average of all there distances?
-That is to say, what is the time average of the distance traveled?\cite{griffiths2018}
+That is to say, what is the time average of the distance travelled?
+\marginnote[-40mm]{\bibentry{griffiths2018}}
  
 \section{Distance Formula}
 $x(t) = \frac{1}{2} gt^2$\\[4mm]
 $g = 9.8067 \textsf{ms}^{-2}$\\[4mm]
-\begin{tikzpicture}
+\begin{marginfigure}[-20mm]
+\begin{tikzpicture}[scale=0.5]
   \begin{axis}[
     axis lines = left,
     xlabel = \(t\),
-    ylabel = {\(\frac{1}{2}gt^2\)},
+    ylabel = {\(d = \frac{1}{2}gt^2\)},
   ]
   \addplot[
     domain=0:100,
@@ -33,4 +35,33 @@ $g = 9.8067 \textsf{ms}^{-2}$\\[4mm]
   ]{0.5 * 9.8067 * x^2};
   \end{axis}
 \end{tikzpicture}
-\end{document} 
+\end{marginfigure}
+
+\section{Velocity}
+$x(t) = \frac{1}{2}gt^2$\\[4mm]
+$\frac{dx}{dt} = gt$\\[4mm]
+\begin{marginfigure}
+  \begin{tikzpicture}[scale=0.5]
+  \begin{axis}[
+    axis lines = left,
+    xlabel = \(t\),
+    ylabel = {\(v = gt\)},
+  ]
+  \addplot[
+    domain=0:100,
+    samples=1000,
+    color=gray
+  ]{9.8067 * x};
+  \end{axis}
+\end{tikzpicture}
+\end{marginfigure}
+
+\section{Flight Time}
+Height: $h$; \hspace{2mm}Total Flight Time: $T$\\[4mm]
+$h = \frac{1}{2}gT^2$ \\[4mm]
+$\frac{2h}{g} = T^2$ \\[4mm]
+$T = \sqrt{\frac{2h}{g}}$
+
+\section{Random Intervals}
+
+\end{document}
