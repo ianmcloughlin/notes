@@ -1,0 +1,13 @@
+\documentclass{ianstikz}
+
+\begin{document}
+\begin{tikzpicture}[
+  lightwave/.style={draw=gray, decorate, decoration={expanding waves, angle=30, segment length=1mm}},
+  lightbulb/.style={circle, fill=red}
+]
+\draw[fill=black!40]            (6,-4) rectangle (6.2,5);
+  \draw[lightwave] (0,0.5) node[lightbulb] {}  -- (8,1);
+  \draw[lightwave] (0,0) node[lightbulb] {}  -- (8,0);
+\end{tikzpicture}
+
+\end{document}
