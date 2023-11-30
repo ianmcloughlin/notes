@@ -1,0 +1,69 @@
+\documentclass{iansnotes}
+
+\title{Deutsch's Algorithm}
+\author{ian.mcloughlin@atu.ie}
+\date{Last updated: \today}
+
+\begin{document}
+ 
+\maketitle 
+
+\marginnote{\bibentry{qiskitdeutsch}}
+\begin{quantikz}[slice all, slice style=gray, slice titles={$\ket{\psi_\col}$}]
+  \lstick{$\ket{0}$} & &  & \gate{H} & \gate[2][20mm]{U}\gateinput{$x$}\gateoutput{$x$} & \gate{H} & \meter{} & \setwiretype{c} \\
+  \lstick{$\ket{0}$} & & \gate{X} & \gate{H} & \gateinput{$x$}\gateoutput{$y \oplus f(x)$}    &          &          &                  
+\end{quantikz} \\[16mm]
+$\ket{\psi_1} = \ket{0} \otimes \ket{0} = \ket{00} \rightarrow \begin{bmatrix} 1 \\ 0 \end{bmatrix} \otimes \begin{bmatrix} 1 \\ 0 \end{bmatrix} = \begin{bmatrix} 1 \begin{bmatrix} 1 \\ 0 \end{bmatrix} \\[6mm] 0 \begin{bmatrix} 1 \\ 0 \end{bmatrix} \end{bmatrix} = \begin{bmatrix} 1 \\ 0 \\ 0 \\ 0 \end{bmatrix}$ \\[16mm]
+$\ket{\psi_2} = (I \otimes X) \ket{\psi_1} = \begin{bmatrix} 0 & 1 & 0 & 0 \\ 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \end{bmatrix} \begin{bmatrix} 1 \\ 0 \\ 0 \\ 0 \end{bmatrix} = \begin{bmatrix} 0 \\ 1 \\ 0 \\ 0 \end{bmatrix}$\\[16mm]
+$I \otimes X = \begin{bmatrix}
+  1 \begin{bmatrix} 0 & 1 \\ 1 & 0 \\ \end{bmatrix} & 0 \begin{bmatrix} 0 & 1 \\ 1 & 0 \\ \end{bmatrix} \\[5mm]
+  0 \begin{bmatrix} 0 & 1 \\ 1 & 0 \\ \end{bmatrix} & 1 \begin{bmatrix} 0 & 1 \\ 1 & 0 \\ \end{bmatrix} \\
+\end{bmatrix} = \begin{bmatrix} 0 & 1 & 0 & 0 \\ 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \end{bmatrix}$ \\[16mm]
+$\ket{\psi_3} = (H \otimes H) \ket{\psi_2} = \frac{1}{2} \begin{bmatrix} 1 & 1 & 1 & 1 \\ 1 & -1 & 1 & 1 \\ 1 & 1 & -1 & -1 \\ 1 & 1 & -1 & 1 \end{bmatrix} \begin{bmatrix} 0 \\ 1 \\ 0 \\ 0 \end{bmatrix} = \frac{1}{2}\begin{bmatrix} 1 \\ -1 \\ 1 \\ 1 \end{bmatrix}$ \\[16mm]
+$H \otimes H = \frac{1}{\sqrt{2}\sqrt{2}} \begin{bmatrix}
+  1 \begin{bmatrix} 1 & 1 \\ 1 & -1 \\ \end{bmatrix} & 1 \begin{bmatrix} 1 & 1 \\ 1 & -1 \\ \end{bmatrix} \\[5mm]
+  1 \begin{bmatrix} 1 & 1 \\ 1 & -1 \\ \end{bmatrix} & -1 \begin{bmatrix} 1 & 1 \\ 1 & -1 \\ \end{bmatrix} \\
+\end{bmatrix} = \frac{1}{2} \begin{bmatrix} 1 & 1 & 1 & 1 \\ 1 & -1 & 1 & 1 \\ 1 & 1 & -1 & -1 \\ 1 & 1 & -1 & 1 \end{bmatrix}$
+
+
+
+\subsection{$U_f$}
+{\footnotesize
+\begin{tabular}{cc|cc|cc|cc|cc}
+  $x$ & $y$ & $f_{00}(x)$ & $y \oplus f_{00}(x)$ & $f_{01}(x)$ & $y \oplus f_{01}(x)$ & $f_{10}(x)$ & $y \oplus f_{10}(x)$& $f_{11}(x)$ & $y \oplus f_{11}(x)$ \\
+  \midrule
+  0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+  0 & 1 & 0 & 1 & 0 & 1 & 1 & 0 & 1 & 0 \\
+  1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 1 \\
+  1 & 1 & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 \\
+\end{tabular}} \\[12mm]
+\noindent \begin{tabular}{c|cccc}
+           & $f_{00}$ & $f_{01}$ & $f_{10}$ & $f_{11}$ \\
+  \midrule
+  $\ket{00}$ & $\ket{00}$ & $\ket{00}$ & $\ket{01}$ & $\ket{01}$ \\
+  $\ket{01}$ & $\ket{01}$ & $\ket{01}$ & $\ket{00}$ & $\ket{00}$ \\
+  $\ket{10}$ & $\ket{10}$ & $\ket{11}$ & $\ket{10}$ & $\ket{11}$ \\
+  $\ket{11}$ & $\ket{11}$ & $\ket{10}$ & $\ket{11}$ & $\ket{10}$ \\ 
+\end{tabular}\\[16mm]
+
+\noindent \begin{quantikz}
+  & \gate{I}\gategroup[2,steps=1,style={inner sep=6pt}]{$f_{00}$} & &\wireoverride{n} & \ctrl{1}\gategroup[2,steps=1,style={inner sep=6pt}]{$f_{01}$} & &\wireoverride{n}& \gate{I}\gategroup[2,steps=2,style={inner sep=6pt}]{$f_{10}$} & \ctrl{1} & &\wireoverride{n} & \gate{I}\gategroup[2,steps=1,style={inner sep=6pt}]{$f_{11}$} & \\
+  & \gate{I} &&\wireoverride{n}  & \targ{}& &\wireoverride{n} & \gate{X} &\targ{} &&\wireoverride{n}  & \gate{X} &
+\end{quantikz} \\[16mm]
+
+$\begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \end{bmatrix}\begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} 0 & 1 & 0 & 0 \\ 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \end{bmatrix}$
+
+\newpage
+\subsection{$f_{00}$}
+
+\noindent $\ket{\psi_4} = (H \otimes I) \ket{\psi_3} = \frac{1}{2\sqrt{2}} \begin{bmatrix} 1 & 1 & 0 & 0 \\ 1 & -1 & 0 & 0 \\ 0 & 0 & 1 & 1 \\ 0 & 0 & 1 & -1 \end{bmatrix} \begin{bmatrix} 1 \\ -1 \\ 1 \\ 1 \end{bmatrix} = \begin{bmatrix} 1 \\ -1 \\ 1 \\ 1 \end{bmatrix}$ \\[16mm]
+$H \otimes I = \frac{1}{\sqrt{2}} \begin{bmatrix}
+  1 \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ \end{bmatrix} & 1 \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ \end{bmatrix} \\[5mm]
+  1 \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ \end{bmatrix} & -1 \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ \end{bmatrix} \\
+\end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 & 0 & 0 \\ 1 & -1 & 0 & 0 \\ 0 & 0 & 1 & 1 \\ 0 & 0 & 1 & -1 \end{bmatrix}$
+
+
+
+
+
+\end{document}
