@@ -19,7 +19,7 @@ $I \otimes X = \begin{bmatrix}
   1 \begin{bmatrix} 0 & 1 \\ 1 & 0 \\ \end{bmatrix} & 0 \begin{bmatrix} 0 & 1 \\ 1 & 0 \\ \end{bmatrix} \\[5mm]
   0 \begin{bmatrix} 0 & 1 \\ 1 & 0 \\ \end{bmatrix} & 1 \begin{bmatrix} 0 & 1 \\ 1 & 0 \\ \end{bmatrix} \\
 \end{bmatrix} = \begin{bmatrix} 0 & 1 & 0 & 0 \\ 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \end{bmatrix}$ \\[16mm]
-$\ket{\psi_3} = (H \otimes H) \ket{\psi_2} = \frac{1}{2} \begin{bmatrix} 1 & 1 & 1 & 1 \\ 1 & -1 & 1 & 1 \\ 1 & 1 & -1 & -1 \\ 1 & 1 & -1 & 1 \end{bmatrix} \begin{bmatrix} 0 \\ 1 \\ 0 \\ 0 \end{bmatrix} = \frac{1}{2}\begin{bmatrix} 1 \\ -1 \\ 1 \\ 1 \end{bmatrix}$ \\[16mm]
+$\ket{\psi_3} = (H \otimes H) \ket{\psi_2} = \frac{1}{2} \begin{bmatrix} 1 & 1 & 1 & 1 \\ 1 & -1 & 1 & -1 \\ 1 & 1 & -1 & -1 \\ 1 & -1 & -1 & 1 \end{bmatrix} \begin{bmatrix} 0 \\ 1 \\ 0 \\ 0 \end{bmatrix} = \frac{1}{2}\begin{bmatrix} 1 \\ -1 \\ 1 \\ -1 \end{bmatrix}$ \\[16mm]
 $H \otimes H = \frac{1}{\sqrt{2}\sqrt{2}} \begin{bmatrix}
   1 \begin{bmatrix} 1 & 1 \\ 1 & -1 \\ \end{bmatrix} & 1 \begin{bmatrix} 1 & 1 \\ 1 & -1 \\ \end{bmatrix} \\[5mm]
   1 \begin{bmatrix} 1 & 1 \\ 1 & -1 \\ \end{bmatrix} & -1 \begin{bmatrix} 1 & 1 \\ 1 & -1 \\ \end{bmatrix} \\
@@ -28,15 +28,15 @@ $H \otimes H = \frac{1}{\sqrt{2}\sqrt{2}} \begin{bmatrix}
 
 
 \subsection{$U_f$}
-{\footnotesize
+
 \begin{tabular}{cc|cc|cc|cc|cc}
-  $x$ & $y$ & $f_{00}(x)$ & $y \oplus f_{00}(x)$ & $f_{01}(x)$ & $y \oplus f_{01}(x)$ & $f_{10}(x)$ & $y \oplus f_{10}(x)$& $f_{11}(x)$ & $y \oplus f_{11}(x)$ \\
+  { \footnotesize $x$ } & { \footnotesize $y$ } & { \footnotesize $f_{00}(x)$ } & { \footnotesize $y \oplus f_{00}(x)$ } & { \footnotesize $f_{01}(x)$ }& { \footnotesize $y \oplus f_{01}(x)$ } & { \footnotesize $f_{10}(x)$ } & { \footnotesize $y \oplus f_{10}(x)$ } & { \footnotesize $f_{11}(x)$ } & { \footnotesize$y \oplus f_{11}(x)$ } \\
   \midrule
   0 & 0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
   0 & 1 & 0 & 1 & 0 & 1 & 1 & 0 & 1 & 0 \\
   1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 1 & 1 \\
   1 & 1 & 0 & 1 & 1 & 0 & 0 & 1 & 1 & 0 \\
-\end{tabular}} \\[12mm]
+\end{tabular} \\[12mm]
 \noindent \begin{tabular}{c|cccc}
            & $f_{00}$ & $f_{01}$ & $f_{10}$ & $f_{11}$ \\
   \midrule
@@ -51,16 +51,33 @@ $H \otimes H = \frac{1}{\sqrt{2}\sqrt{2}} \begin{bmatrix}
   & \gate{I} &&\wireoverride{n}  & \targ{}& &\wireoverride{n} & \gate{X} &\targ{} &&\wireoverride{n}  & \gate{X} &
 \end{quantikz} \\[16mm]
 
-$\begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \end{bmatrix}\begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} 0 & 1 & 0 & 0 \\ 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \end{bmatrix}$
+$U_{00} = \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}$\\[6mm]
+$U_{01} = \begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \end{bmatrix}$\\[6mm]
+$U_{10} = \begin{bmatrix} 0 & 1 & 0 & 0 \\ 1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}$\\[6mm]
+$U_{11} = \begin{bmatrix} 0 & 1 & 0 & 0 \\ 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \end{bmatrix}$
 
-\newpage
+
 \subsection{$f_{00}$}
+$\ket{\psi_4} = U_{00} \ket{\psi_3} = \frac{1}{2}\begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}\begin{bmatrix} 1 \\ -1 \\ 1 \\ -1 \end{bmatrix} = \frac{1}{2}\begin{bmatrix} 1 \\ -1 \\ 1 \\ -1 \end{bmatrix}$\\[12mm]
+\noindent$\ket{\psi_5} = (H \otimes I) \ket{\psi_4} = \frac{1}{2\sqrt{2}} \begin{bmatrix} 1 & 0 & 1 & 0 \\ 0 & 1 & 0 & 1 \\ 1 & 0 & -1 & 0 \\ 0 & 1 & 0 & -1 \end{bmatrix} \begin{bmatrix} 1 \\ -1 \\ 1 \\ -1 \end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 \\ -1 \\ 0 \\ 0 \end{bmatrix}$\\[20mm]
 
-\noindent $\ket{\psi_4} = (H \otimes I) \ket{\psi_3} = \frac{1}{2\sqrt{2}} \begin{bmatrix} 1 & 1 & 0 & 0 \\ 1 & -1 & 0 & 0 \\ 0 & 0 & 1 & 1 \\ 0 & 0 & 1 & -1 \end{bmatrix} \begin{bmatrix} 1 \\ -1 \\ 1 \\ 1 \end{bmatrix} = \begin{bmatrix} 1 \\ -1 \\ 1 \\ 1 \end{bmatrix}$ \\[16mm]
-$H \otimes I = \frac{1}{\sqrt{2}} \begin{bmatrix}
+\subsection{$f_{01}$}
+$\ket{\psi_4} = U_{01} \ket{\psi_3} = \frac{1}{2}\begin{bmatrix} 1 & 0 & 0 & 0 \\ 0 & 1 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \end{bmatrix}\begin{bmatrix} 1 \\ -1 \\ 1 \\ -1 \end{bmatrix} = \frac{1}{2}\begin{bmatrix} 1 \\ -1 \\ -1 \\ 1 \end{bmatrix}$\\[12mm]
+\noindent$\ket{\psi_5} = (H \otimes I) \ket{\psi_4} = \frac{1}{2\sqrt{2}} \begin{bmatrix} 1 & 0 & 1 & 0 \\ 0 & 1 & 0 & 1 \\ 1 & 0 & -1 & 0 \\ 0 & 1 & 0 & -1 \end{bmatrix} \begin{bmatrix} 1 \\ -1 \\ -1 \\ 1 \end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 0 \\ 1 \\ -1 \end{bmatrix}$\\[20mm]
+
+\subsection{$f_{10}$}
+$\ket{\psi_4} = U_{10} \ket{\psi_3} = \frac{1}{2}\begin{bmatrix} 0 & 1 & 0 & 0 \\ 1 & 0 & 0 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 0 & 0 & 1 \end{bmatrix}\begin{bmatrix} 1 \\ -1 \\ 1 \\ -1 \end{bmatrix} = \frac{1}{2}\begin{bmatrix} -1 \\ 1 \\ 1 \\ -1 \end{bmatrix}$\\[12mm]
+\noindent$\ket{\psi_5} = (H \otimes I) \ket{\psi_4} = \frac{1}{2\sqrt{2}} \begin{bmatrix} 1 & 0 & 1 & 0 \\ 0 & 1 & 0 & 1 \\ 1 & 0 & -1 & 0 \\ 0 & 1 & 0 & -1 \end{bmatrix} \begin{bmatrix} -1 \\ 1 \\ 1 \\ -1 \end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix} 0 \\ 0 \\ -1 \\ 1 \end{bmatrix}$\\[20mm]
+
+\subsection{$f_{11}$}
+$\ket{\psi_4} = U_{11} \ket{\psi_3} = \frac{1}{2}\begin{bmatrix} 0 & 1 & 0 & 0 \\ 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \end{bmatrix}\begin{bmatrix} 1 \\ -1 \\ 1 \\ -1 \end{bmatrix} = \frac{1}{2}\begin{bmatrix} -1 \\ 1 \\ -1 \\ 1 \end{bmatrix}$\\[12mm]
+\noindent$\ket{\psi_5} = (H \otimes I) \ket{\psi_4} = \frac{1}{2\sqrt{2}} \begin{bmatrix} 1 & 0 & 1 & 0 \\ 0 & 1 & 0 & 1 \\ 1 & 0 & -1 & 0 \\ 0 & 1 & 0 & -1 \end{bmatrix} \begin{bmatrix} -1 \\ 1 \\ -1 \\ 1 \end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix} -1 \\ 1 \\ 0 \\ 0 \end{bmatrix}$\\[30mm]
+
+
+\noindent $H \otimes I = \frac{1}{\sqrt{2}} \begin{bmatrix}
   1 \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ \end{bmatrix} & 1 \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ \end{bmatrix} \\[5mm]
   1 \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ \end{bmatrix} & -1 \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ \end{bmatrix} \\
-\end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 1 & 0 & 0 \\ 1 & -1 & 0 & 0 \\ 0 & 0 & 1 & 1 \\ 0 & 0 & 1 & -1 \end{bmatrix}$
+\end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 0 & 1 & 0 \\ 0 & 1 & 0 & 1 \\ 1 & 0 & -1 & 0 \\ 0 & 1 & 0 & -1 \end{bmatrix}$
 
 
 
