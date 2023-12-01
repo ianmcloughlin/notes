@@ -71,7 +71,7 @@ $\ket{\psi_4} = U_{10} \ket{\psi_3} = \frac{1}{2}\begin{bmatrix} 0 & 1 & 0 & 0 \
 
 \subsection{$f_{11}$}
 $\ket{\psi_4} = U_{11} \ket{\psi_3} = \frac{1}{2}\begin{bmatrix} 0 & 1 & 0 & 0 \\ 1 & 0 & 0 & 0 \\ 0 & 0 & 0 & 1 \\ 0 & 0 & 1 & 0 \end{bmatrix}\begin{bmatrix} 1 \\ -1 \\ 1 \\ -1 \end{bmatrix} = \frac{1}{2}\begin{bmatrix} -1 \\ 1 \\ -1 \\ 1 \end{bmatrix}$\\[12mm]
-\noindent$\ket{\psi_5} = (H \otimes I) \ket{\psi_4} = \frac{1}{2\sqrt{2}} \begin{bmatrix} 1 & 0 & 1 & 0 \\ 0 & 1 & 0 & 1 \\ 1 & 0 & -1 & 0 \\ 0 & 1 & 0 & -1 \end{bmatrix} \begin{bmatrix} -1 \\ 1 \\ -1 \\ 1 \end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix} -1 \\ 1 \\ 0 \\ 0 \end{bmatrix}$\\[30mm]
+\noindent$\ket{\psi_5} = (H \otimes I) \ket{\psi_4} = \frac{1}{2\sqrt{2}} \begin{bmatrix} 1 & 0 & 1 & 0 \\ 0 & 1 & 0 & 1 \\ 1 & 0 & -1 & 0 \\ 0 & 1 & 0 & -1 \end{bmatrix} \begin{bmatrix} -1 \\ 1 \\ -1 \\ 1 \end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix} -1 \\ 1 \\ 0 \\ 0 \end{bmatrix}$\\[20mm]
 
 
 \noindent $H \otimes I = \frac{1}{\sqrt{2}} \begin{bmatrix}
@@ -80,7 +80,14 @@ $\ket{\psi_4} = U_{11} \ket{\psi_3} = \frac{1}{2}\begin{bmatrix} 0 & 1 & 0 & 0 \
 \end{bmatrix} = \frac{1}{\sqrt{2}} \begin{bmatrix} 1 & 0 & 1 & 0 \\ 0 & 1 & 0 & 1 \\ 1 & 0 & -1 & 0 \\ 0 & 1 & 0 & -1 \end{bmatrix}$
 
 
+\subsection{Measure}
 
-
+$\begin{bmatrix} a \\ b \end{bmatrix} \otimes \begin{bmatrix} c \\ d \end{bmatrix} = \begin{bmatrix} ac \\ ad \\ bc \\ bd \end{bmatrix}$ \\[12mm]
+$\begin{bmatrix} ac \\ ad \\ bc \\ bd \end{bmatrix} = \begin{bmatrix} 0 \\ 0 \\ 1 \\ -1 \end{bmatrix}$ \\[12mm]
+$ac = 0 \Rightarrow a = 0 \textsf{ or } c = 0$ \\[6mm]
+$bc = 1 \Rightarrow b \neq 0 \textsf{ and } c \neq 0$ \\[6mm]
+$\Rightarrow a = 0$ \\[6mm]
+$|a|^2 + |b|^2 = 1$ \\[6mm]
+$\Rightarrow |b|^2 = 1$ \\[6mm]
 
 \end{document}
