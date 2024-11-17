@@ -1,0 +1,84 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{ianstikz}[2024/11/17 Ian's notes style for tikz.]
+
+% Enables the use of colour.
+\RequirePackage{xcolor}
+% Diagrams.
+\RequirePackage{tikz}
+% More math symbols.
+\RequirePackage{amssymb}
+% More math fonts, like mathbb.
+\RequirePackage{amsfonts}
+% Adjust the sizes of box environments.
+\RequirePackage{adjustbox}
+% For plotting.
+\RequirePackage{pgfplots}
+% For more font sizes.
+\RequirePackage{anyfontsize}
+% Enables the use of umlauts and other accents.
+\RequirePackage[utf8]{inputenc}
+% Symbols for units, like degrees and ohms.
+\RequirePackage{gensymb}
+% Images.
+\RequirePackage{graphicx}
+% Circuits.
+\RequirePackage{circuitikz}
+% Quantum brackets.
+\RequirePackage{braket}
+% SI units.
+\RequirePackage{siunitx}
+
+% Various tikz libraries.
+% Quantum circuits.
+\usetikzlibrary{quantikz2}
+% For drawing mind maps.
+\usetikzlibrary{mindmap}
+% For adding shadows.
+\usetikzlibrary{shadows}
+% Extra arrows tips.
+\usetikzlibrary{arrows.meta}
+% Old arrows.
+\usetikzlibrary{arrows}
+% Automata.
+\usetikzlibrary{automata}
+% For more positioning options.
+\usetikzlibrary{positioning}
+% Creating chains of nodes on a line.
+\usetikzlibrary{chains}
+% Fitting node to contain set of coordinates.
+\usetikzlibrary{fit}
+% Extra shapes for drawing.
+\usetikzlibrary{shapes}
+% For markings on paths.
+\usetikzlibrary{decorations.markings}
+% For advanced calculations.
+\usetikzlibrary{calc}
+% For layering.
+\usetikzlibrary{backgrounds}
+% Graphs.
+\usetikzlibrary{graphs}
+% Standard graph types.
+\usetikzlibrary{graphs.standard}
+% Calculations in TikZ.
+\usetikzlibrary{calc}
+% Wavy lines.
+\usetikzlibrary{decorations.pathmorphing}
+% Matrices.
+\usetikzlibrary{matrix}
+  
+% PGF plots version.
+\pgfplotsset{compat=1.18}
+
+% ATU colours.
+\definecolor{atuteal}{RGB}{0,91,94}
+\definecolor{atunavy}{RGB}{0,26,121}
+\definecolor{atupurple}{RGB}{77,8,87}
+\definecolor{atuwhite}{RGB}{255,255,255}
+\definecolor{atuorange}{RGB}{255,121,30}
+\definecolor{atulightblue}{RGB}{123,185,203}
+\definecolor{atulightgreen}{RGB}{172,230,189}
+\definecolor{atusand}{RGB}{250,200,180}
+\definecolor{atuyellow}{RGB}{237,240,65}
+\definecolor{atuwarmgrey}{RGB}{200,190,191}
+\definecolor{atugold}{RGB}{215,180,99}
+\definecolor{atuoffwhite}{RGB}{237,237,237}
