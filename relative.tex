@@ -3,27 +3,29 @@
 \usepackage{ianstikz}
 
 \begin{document}
-\begin{tikzpicture}[scale=4]
-    \path (2.5, 2.5) -- (-0.5, -2.5);
-    % Bottom of train.
-    \draw[-latex] (-0.45, 0) -- (1.9, 0) node[below left, gray] {\footnotesize $v$};
-    % Top of Train
-    \draw[-latex] (-0.45, 2) -- (1.9, 2) node[below left, gray] {\footnotesize $v$};
+\begin{tikzpicture}[scale=2]
+    % Boundaries.
+    \path (-1, -1) rectangle (6, 5);
 
-    % Stationary observer.
-    \draw[-latex, thick] (1, 0) --node[above] {\footnotesize } (0, 2);
-    \draw[gray, |-|, dashed] (1.05, 0) --node[above, rotate=-60] {\footnotesize $c t_0$} (0.02, 2);
+    % On the train.
+    \draw[gray] (0, 3) rectangle (4, 4); 
+    \draw (0.5, 3.5) node {\Strichmaxerl[2]};
+    \draw[-latex, thick] (2, 3) --node[right] {$ct^\prime$} (2, 4);
 
-    % Train observer.
-    \draw[-latex, thick] (0, 0) --node[above=0.25] {\footnotesize } (0, 2);
-    \draw[gray, |-|, dashed] (-0.05, 0) --node[above, rotate=90] {\footnotesize $c t_1$} (-0.05, 2);
-    \draw[gray, |-|, dashed] (0, -0.025) --node[below] {\footnotesize $v t_1$} (1, -0.025);
-  
-    \draw[gray] (0.1, 0.05) -- (0.05, 0.05) -- (0.05, 0.1);
-  
-    \path (1.2, 1.5) --node[] {$(c t_0)^2 = (c t_1)^2 + (v t_1)^2$} (1.2, 1.5);
-    \path (1.2, 1.3) --node[] {$c^2t_0^2 = c^2t_1^2 + v^2t_1^2$} (1.2, 1.3);
-    \path (1.2, 1.1) --node[] {$t_0^2 = \left(1 + \frac{v^2}{c^2}\right)t_1^2$} (1.2, 1.1);
-    \path (1.2, 0.9) --node[] {$t_0 =  t_1\sqrt{1 + \frac{v^2}{c^2}}$} (1.2, 0.9);
+    % On the platform.
+    \draw[gray] (0, 1) rectangle (4, 2);
+    \draw (0.5, 0.5) node {\Strichmaxerl[2]};
+    \draw[-latex] (4, 1.5) -- (4.5, 1.5) node[right] {$v$};
+    \draw[-latex, thick] (2, 1) --node[right] {$ct$} (3, 2);
+    \draw[-latex, thick] (2, 2) --node[above] {$vt$} (3, 2);
+    \draw[|-|, gray, dashed] (2, 1) --node[left] {$ct^\prime$} (2, 2);
+    \draw[gray] (2.1, 1.8) -- ++(0, 0.1) -- ++(0.1, 0);
+    
+    \path
+        (1,  0.5) node[right] {$(c t)^2 = (c t^\prime)^2 + (v t)^2$}
+      ++(0, -0.4) node[right] {$\Rightarrow c^2t^2 - v^2t^2 = c^2(t^\prime)^2 $}
+      ++(0, -0.4) node[right] {$\Rightarrow t^2(c^2 - v^2) = c^2(t^\prime)^2 $}
+      ++(0, -0.4) node[right] {$\Rightarrow (t^\prime)^2 = t^2(1 - \frac{v^2}{c^2})$}
+      ++(0, -0.4) node[right] {$\Rightarrow t^\prime = t\sqrt{1 - \frac{v^2}{c^2}}$};
   \end{tikzpicture}
 \end{document}
